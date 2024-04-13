@@ -1,0 +1,78 @@
+SELECT nome_membro, texto_comentario, titulo_noticia, texto_noticia from membros m
+inner JOIN comentarios c
+ON
+m.id_membro=c.id_membro
+inner join noticias n
+ON
+c.id_noticia=n.id_noticia
+WHERE
+m.id_membro>=1
+------------------------------------------------------------------------------------
+
+SELECT nome_membro, texto_comentario,texto_resposta from membros m
+
+inner JOIN comentarios c
+
+ON
+
+m.id_membro=c.id_membro
+
+inner join noticias n
+
+ON
+
+c.id_noticia=n.id_noticia
+
+inner join respostas r
+
+on
+ 
+c.id_comentario=r.id_resposta
+
+WHERE
+
+m.id_membro=1
+------------------------------------------------------------------------------------
+
+SELECT nome_membro,texto_resposta,texto_comentario from membros m
+INNER JOIN respostas r
+on
+m.id_membro=r.id_membro
+inner JOIN comentarios c
+ON
+c.id_comentario=r.id_comentario
+
+------------------------------------------------------------------------------------
+
+SELECT nome_membro, texto_comentario,texto_resposta from membros m
+
+inner JOIN comentarios c
+
+ON
+
+m.id_membro=c.id_membro
+
+inner join noticias n
+
+ON
+
+c.id_noticia=n.id_noticia
+
+inner join respostas r
+
+on
+ 
+c.id_comentario=r.id_resposta
+
+WHERE
+
+m.id_membro=1
+union
+SELECT nome_membro,texto_resposta,texto_comentario from membros m
+INNER JOIN respostas r
+on
+m.id_membro=r.id_membro
+inner JOIN comentarios c
+ON
+c.id_comentario=r.id_comentario
+------------------------------------------------------------------------------------

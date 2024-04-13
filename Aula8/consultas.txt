@@ -1,0 +1,64 @@
+SELECT nome_cliente as Cliente,nome_vendedor as vendedor ,nome_produto as Produto from clientes c
+INNER JOIN pedidos p
+ON
+c.id_cliente=p.id_cliente
+inner JOIN vendedores v
+ON
+v.id_vendedor=p.id_vendedor
+INNER JOIN itens_de_pedidos ip
+ON
+ip.id_pedido=p.id_pedido
+inner join produtos pro
+ON
+pro.id_produto=ip.id_produto
+WHERE
+c.id_cliente=3
+
+
+
+
+_____________________________________________
+
+
+SELECT DISTINCT nome_cliente from clientes c 
+INNER JOIN pedidos p 
+ON
+c.id_cliente=p.id_cliente 
+inner JOIN vendedores v 
+ON
+v.id_vendedor=p.id_vendedor 
+INNER JOIN itens_de_pedidos ip 
+ON
+ip.id_pedido=p.id_pedido 
+inner join produtos pro 
+ON
+pro.id_produto=ip.id_produto 
+WHERE c.id_cliente=3 
+union
+SELECT distinct nome_vendedor as vendedor from clientes c
+INNER JOIN pedidos p ON c.id_cliente=p.id_cliente 
+inner JOIN vendedores v 
+ON v.id_vendedor=p.id_vendedor 
+INNER JOIN itens_de_pedidos ip
+ON
+ip.id_pedido=p.id_pedido
+inner join produtos pro
+ON
+pro.id_produto=ip.id_produto
+WHERE c.id_cliente=3
+union
+SELECT nome_produto as Produto from clientes c
+INNER JOIN pedidos p
+ON
+c.id_cliente=p.id_cliente
+inner JOIN vendedores v
+ON
+v.id_vendedor=p.id_vendedor
+INNER JOIN itens_de_pedidos ip
+ON
+ip.id_pedido=p.id_pedido
+inner join produtos pro
+ON
+pro.id_produto=ip.id_produto
+WHERE
+c.id_cliente=3
